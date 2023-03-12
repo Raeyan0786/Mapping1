@@ -1,0 +1,27 @@
+package com.example.Mapping1.model;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+//import javax.persistence.*;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table
+public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer bookId;
+
+    private String bookTitle;
+    private String bookAuthor;
+    private String bookDescription;
+    private String bookPrice;
+
+    @ManyToOne
+    private Student student;
+}
